@@ -26,3 +26,12 @@ console.log(getMinMax(numberArray));
     }.`
   );
 })(20, 30);
+
+// or
+((recLength, recWidth) => {
+  console.log(
+    `The area of a rectangle with a length of ${recLength} and a width of ${recWidth} is ${
+      recLength * recWidth
+    }.`
+  );
+})(40, 50);
