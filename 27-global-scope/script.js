@@ -20,8 +20,9 @@ if (true) {
 function add() {
     const y = 50; // function scoped
     console.log(y)
+    console.log(x + y)
 }
 
 add()
-console.log(y) // undefined
+// console.log(y) // undefined
 
