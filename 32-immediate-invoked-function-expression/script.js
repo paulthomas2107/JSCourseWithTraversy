@@ -1,7 +1,8 @@
-// IIFE
+// IIFE (Immediate Invoked Function Expressions)
 // Declare and run at the same time.
 
 // IIFE Solution
+
 // Anonymous IFFE
 (function (name) {
   const user = 'Rory from script.js';
