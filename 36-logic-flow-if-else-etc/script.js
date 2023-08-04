@@ -320,3 +320,46 @@ console.log(a3);
 a3 = undefined;
 a3 ??= 240;
 console.log(a3);
+
+// Ternary Operator
+const age = 18;
+if (age >= 18) {
+  console.log('Vote');
+} else {
+  console.log('No vote');
+}
+// Ternary version
+console.log(age >= 18 ? '*Vote' : '*No Vote');
+console.log(true ? 'True' : 'false');
+console.log(false ? 'True' : 'false');
+console.log(null ? 'True' : 'false');
+console.log(undefined ? 'True' : 'false');
+
+// Assign conditional value to a variable
+const canVote = `You ${age >= 18 ? 'can' : 'cannot'} vote`;
+console.log(canVote);
+
+// Multiples statements
+const auth = true;
+let redirect;
+
+if (auth) {
+  console.log('Welcome to dash');
+  redirect = '/dashboard';
+} else {
+  console.log('Access denied');
+  redirect = '/login';
+}
+
+console.log(redirect);
+
+const redirect2 = auth
+  ? (console.log('Welcome to dash*'), '/direct')
+  : (console.log('Access Denied*'), '/login');
+console.log(redirect2);
+
+// &
+auth ? console.log('yes dashbaord') : null;
+
+// Better
+auth && console.log('Yes more dash');
