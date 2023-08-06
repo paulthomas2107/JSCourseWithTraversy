@@ -121,3 +121,115 @@ const evenDouble = n1
   .filter((number) => number % 2 === 0)
   .map((number) => number * 2);
 console.log(evenDouble);
+
+// Array Reduce - long
+const numbArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sumArr = numbArr.reduce(function (accumulator, currentValue) {
+  //  1 then 3 then 6 etc
+  return accumulator + currentValue;
+}, 0); // Initial Value - optional
+console.log(sumArr); // 55
+
+// Shorter Version
+const sum2 = numbArr.reduce((acc, cur) => acc + cur, 10); // initial);
+console.log(sum2); // 65
+
+// Using for loop to reduce
+const sum3 = () => {
+  let acc = 20;
+  for (const cur of numbArr) {
+    acc += cur;
+  }
+  return acc;
+};
+console.log(sum3()); // 75
+
+// Shoppimng Cart
+const cart = [
+  {
+    id: 1,
+    name: 'Product 1',
+    price: 130,
+  },
+  {
+    id: 2,
+    name: 'Product 2',
+    price: 150,
+  },
+  {
+    id: 3,
+    name: 'Product 3',
+    price: 175,
+  },
+];
+
+// Example easy
+const cartSum = cart.reduce(
+  (acc, productInCart) => acc + productInCart.price,
+  0
+); // initial);
+console.log(cartSum);
+
+// Array Method Challenges
+// 1.
+
+const people = [
+  {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@gmail.com',
+    phone: '111-111-1111',
+    age: 38,
+  },
+  {
+    firstName: 'Jane',
+    lastName: 'Poe',
+    email: 'jane@gmail.com',
+    phone: '222-222-2222',
+    age: 25,
+  },
+  {
+    firstName: 'Bob',
+    lastName: 'Foe',
+    email: 'bob@gmail.com',
+    phone: '333-333-3333',
+    age: 45,
+  },
+  {
+    firstName: 'Sara',
+    lastName: 'Soe',
+    email: 'sara@gmail.com',
+    phone: '444-444-4444',
+    age: 19,
+  },
+  {
+    firstName: 'Joe',
+    lastName: 'Koe',
+    email: 'jose@gmail.com',
+    phone: '555-555-5555',
+    age: 23,
+  },
+];
+
+// Young people
+const youngPeople = people
+  .filter((person) => person.age <= 25)
+  .map((person) => ({
+    name: `${person.firstName} ${person.lastName}`,
+    email: person.email,
+  }));
+console.log(youngPeople);
+
+// Challenge 2
+const numChal2 = [2, -38, 50, 20, -12, -9, 7];
+const positiveSum = numChal2
+  .filter((number) => number > 0)
+  .reduce((acc, number) => acc + number, 0);
+console.log(positiveSum); // 79
+
+// Challnge 3
+const words = ['coder', 'programmer', 'developer'];
+const capitalizedWords = words.map((word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+});
+console.log(capitalizedWords);
