@@ -29,9 +29,11 @@ output = document.images;
 output = document.images[0];
 output = document.images[0].src;
 
-const forms = Array.from(document.forms);
-forms.forEach((form) => {
+Array.from(document.forms).forEach((form) => {
   console.log(form);
 });
 
 console.log(output);
+
+// DOM Selectors - Single Elements
+// ================================
