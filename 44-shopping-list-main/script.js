@@ -77,12 +77,15 @@ const firstItem = list.querySelector('li');
 firstItem.style.color = 'blue';
 
 // DOM Selecting multiple items
-const listItems = document.getElementById('pt1').querySelectorAll('li');
+const listItems = document.querySelectorAll('.items');
 listItems.forEach((item, index) => {
   if (index === 1) {
     item.remove();
   }
   if (index === 0) {
-    item.innerText = 'Oranges !';
+    //
+    item.innerHTML = ` Pineapple <button class="remove-item btn-link text-red">
+              <i class="fa-solid fa-xmark"></i>
+            </button>`;
   }
 });
