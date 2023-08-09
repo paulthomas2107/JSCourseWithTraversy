@@ -37,3 +37,43 @@ console.log(output);
 
 // DOM Selectors - Single Elements
 // ================================
+
+console.log(document.getElementById('item-form'));
+console.log(document.getElementById('item-form').id);
+console.log(document.getElementById('item-form').getAttribute('id'));
+
+// Set attributes
+document.getElementById('item-form').title = 'Paul Shopping List';
+document.getElementById('item-form').setAttribute('class', 'title');
+const title = document.getElementById('item-form');
+console.log(title);
+
+// Get / change title
+console.log(title.textContent);
+title.textContent = 'Hello World';
+title.innerText = 'Hello !';
+title.innerHTML = '<strong>Shopping List</strong>';
+
+// Change styles CSS
+title.style.color = 'red';
+title.style.backgroundColor = 'black';
+title.style.padding = '10px';
+title.style.borderRadius = '10px';
+
+// Document query selector
+console.log(document.querySelector('h1'));
+console.log(document.querySelector('#item-form'));
+console.log(document.querySelector('.container'));
+console.log(document.querySelector('input[type="text"]'));
+console.log(document.querySelector('li:nth-child(2)').innerText);
+const secondItem = document.querySelector('li:nth-child(2)');
+secondItem.innerText = 'Ribena';
+secondItem.style.color = 'green';
+
+// Use these methods on other elements
+const list = document.querySelector('ul');
+console.log(list);
+const firstItem = list.querySelector('li');
+firstItem.style.color = 'blue';
+
+// DOM Selecting multiple items
