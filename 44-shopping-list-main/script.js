@@ -72,8 +72,17 @@ secondItem.style.color = 'green';
 
 // Use these methods on other elements
 const list = document.querySelector('ul');
-console.log(list);
+//console.log(list);
 const firstItem = list.querySelector('li');
 firstItem.style.color = 'blue';
 
 // DOM Selecting multiple items
+const listItems = document.getElementById('pt1').querySelectorAll('li');
+listItems.forEach((item, index) => {
+  if (index === 1) {
+    item.remove();
+  }
+  if (index === 0) {
+    item.innerText = 'Oranges !';
+  }
+});
