@@ -14,8 +14,19 @@ function replaceAllItems() {
   const lis = document.querySelectorAll('li');
   lis.forEach((item, index) => {
     //item.outerHTML = `<li>Replace all - Item ${index + 1}</li>`;
-    item.innerHTML = `Replace all - Item ${index + 1}...`;
+    if (index === 1) {
+      item.innerHTML = `Second Item !`;
+    } else {
+      item.innerHTML = `Replace all - Item ${index + 1}...`;
+    }
   });
+
+  // or
+  lis.forEach(
+    (item, index) =>
+      (item.outerHTML =
+        index === 1 ? `Second Item ! *` : `Replace all - Item ${index + 1}`)
+  );
 }
 
 replaceFirstItem();
