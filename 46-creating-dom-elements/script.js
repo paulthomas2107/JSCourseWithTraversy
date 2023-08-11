@@ -81,7 +81,19 @@ function insertBeforeItem() {
   ul.insertBefore(li, thirdItem);
 }
 
+function insertAfter(newEl, existingEl) {
+  console.log(existingEl.parentNode);
+  existingEl.parentElement.insertBefore(newEl, existingEl.nextSibling);
+}
+
 insertElement();
 insertText();
 insertHTML();
 insertBeforeItem();
+
+// Custom InsertAfter()
+const li = document.createElement('li');
+li.textContent = 'Insert me after';
+const firstItem = document.querySelector('li:first-child');
+// Custom insertAfter
+insertAfter(li, firstItem);
