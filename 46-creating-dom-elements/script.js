@@ -25,16 +25,43 @@ function createNewItem(item) {
   // Create items
   const li = document.createElement('li');
   li.appendChild(document.createTextNode(item));
-  const button = document.createElement('button');
-  button.className = 'remove-item btn-link text-red';
-  const icon = document.createElement('i');
-  icon.className = 'fa-solid fa-xmark';
-  // Embed items
-  button.appendChild(icon);
+
+  const button = createButton('remove-item btn-link text-red');
+
   li.appendChild(button);
   // Add to panel
   document.querySelector('.items').appendChild(li);
 }
 
-createListItem('Twix');
-createNewItem('Burger');
+function createButton(classes) {
+  const button = document.createElement('button');
+  button.className = classes;
+  const icon = createIcon('fa-solid fa-xmark');
+  button.appendChild(icon);
+  return button;
+}
+function createIcon(classes) {
+  const icon = document.createElement('i');
+  icon.className = classes;
+  return icon;
+}
+
+createListItem('Mars Bar');
+createNewItem('Ribs');
+
+// Insert elements, text and HTML
+
+// InsertAdjacentElement Example
+function insertElement() {
+  const filter = document.querySelector('.filter');
+  const h1 = document.createElement('h1');
+  h1.textContent = 'InsertAdjacentElement';
+  filter.insertAdjacentElement('beforeBegin', h1);
+}
+
+// InsertAdjacentText Example
+
+// InsertAdjacentHTML Example
+
+// InsertBefore Example
+insertElement();
