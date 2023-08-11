@@ -60,8 +60,28 @@ function insertElement() {
 }
 
 // InsertAdjacentText Example
+function insertText() {
+  const item = document.querySelector('li:first-child');
+  item.insertAdjacentText('afterend', 'InsertAdjacentText');
+}
 
 // InsertAdjacentHTML Example
+function insertHTML() {
+  const clearBTN = document.querySelector('#clear');
+  clearBTN.insertAdjacentHTML('beforebegin', '<h2>InsertAdjacentHTML</h2>');
+}
 
 // InsertBefore Example
+function insertBeforeItem() {
+  const ul = document.querySelector('ul');
+  const li = document.createElement('li');
+  li.textContent = 'insertBefore';
+  li.style.color = 'red';
+  const thirdItem = document.querySelector('li:nth-child(3)');
+  ul.insertBefore(li, thirdItem);
+}
+
 insertElement();
+insertText();
+insertHTML();
+insertBeforeItem();
